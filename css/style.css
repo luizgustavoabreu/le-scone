@@ -192,12 +192,31 @@ table {
 @media screen and (max-width: 759px) {
   .container {
     max-width: 480px;
-    margin-left: 10px;
-    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
 .container::before, .container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row {
+  position: relative;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+@media screen and (max-width: 759px) {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.row::before, .row::after {
   content: "";
   display: table;
   clear: both;
